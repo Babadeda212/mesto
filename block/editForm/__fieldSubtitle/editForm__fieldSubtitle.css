@@ -1,0 +1,20 @@
+.editForm__fieldSubtitle{
+    width: 358px;
+    height: 27px;
+    border:0;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 30px;
+    padding: 0  0 13px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+@media  (max-width: 568px){
+    .editForm__fieldSubtitle{
+        width: 238px;
+    }
+}

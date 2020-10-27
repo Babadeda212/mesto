@@ -1,0 +1,25 @@
+.profile__info-title{
+    margin: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 56px;
+    color: #FFFFFF;
+    width: 294px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+@media  (max-width: 890px){
+    .profile__info-title{
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: 14px;
+    }
+
+}
