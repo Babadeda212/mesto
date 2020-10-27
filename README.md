@@ -2,7 +2,7 @@
 
 ### интро
 -Сайт о Местах в России
-- https://babadeda212.github.io/russian-travel/
+- https://babadeda212.github.io/mesto/
 ### использованные технологии
 - flexbox
 - grid
