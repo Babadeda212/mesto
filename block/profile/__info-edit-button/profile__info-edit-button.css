@@ -1,7 +1,7 @@
 .profile__info-edit-button{
     width: 24px;
     height: 24px;
-    margin: 6% 0 0 95%;
+    margin: 6% 0 0 100%;
     grid-column: 1/2;
     grid-row: 1/2;
 }
