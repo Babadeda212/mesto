@@ -19,6 +19,7 @@
     .edit-form__close{
         width: 26px;
         height: 26px;
+        background-size: contain;
         margin: 72px auto 0 calc(50% + 100px);
     }
 }
