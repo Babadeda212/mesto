@@ -1,8 +1,8 @@
-.editForm__fieldName{
+.edit-form__input{
     width: 358px;
     height: 27px;
     border:0;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
     margin-bottom: 30px;
     padding: 0  0 13px;
 
@@ -14,7 +14,7 @@
     color: #000000;
 }
 @media  (max-width: 568px){
-    .editForm__fieldName{
+    .edit-form__input{
         width: 238px;
     }
 }

@@ -1,14 +1,15 @@
-.editForm__title{
+.edit-form__title{
     font-family: Inter;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-
+    text-align: left;
+    margin-left: 36px;
 }
 @media  (max-width: 568px){
-    .editForm__title{
+    .edit-form__title{
         font-size: 18px;
         line-height: 22px;
     }

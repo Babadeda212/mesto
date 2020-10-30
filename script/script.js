@@ -1,29 +1,33 @@
 let buttonEditProfile =document.querySelector('.profile__info-edit-button');
-let formEdit = document.querySelector('.editForm');
-let closeButtonFormEdit = document.querySelector('.editForm__close');
-let nameFormEdit = document.querySelector('.editForm__fieldName');
-let subNameFormEdit = document.querySelector('.editForm__fieldSubtitle');
-let saveButton = document.querySelector('.editForm__submitButton');
+let formEdit = document.querySelector('.edit-form');
+let closeButtonFormEdit = document.querySelector('.edit-form__close');
+let nameFormEdit = document.querySelector('.edit-form__fieldName');
+let subNameFormEdit = document.querySelector('.edit-form__fieldSubtitle');
+let saveButton = document.querySelector('.edit-form__submitButton');
 let profileName = document.querySelector('.profile__info-title');
 let profileSubtitle = document.querySelector('.profile__info-subtitle');
-let form=document.querySelector('.editForm__form');
+let form=document.querySelector('.edit-form__form');
 
 
 function openFormEdit() {
-    formEdit.style.display='grid';
+    formEdit.classList.remove('edit-form__hidden');
+    formEdit.classList.add('edit-form__open');
 }
 function closeForm(){
-    formEdit.style.display='none';
+    formEdit.classList.add('edit-form__hidden');
+    formEdit.classList.remove('edit-form__open');
     nameFormEdit.value=profileName.textContent;
     subNameFormEdit.value=profileSubtitle.textContent;
 }
-function addTextProfile(){
+function addTextProfile(evt){
+    evt.preventDefault();
     let name = nameFormEdit.value;
     let subName= subNameFormEdit.value;
     profileName.textContent=name;
     profileSubtitle.textContent=subName;
+    closeForm();
 }
 
-saveButton.addEventListener('click',addTextProfile);
+form.addEventListener('submit',addTextProfile);
 buttonEditProfile.addEventListener('click',openFormEdit);
 closeButtonFormEdit.addEventListener('click',closeForm);

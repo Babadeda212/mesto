@@ -9,7 +9,6 @@
 }
 @media (max-width: 890px) {
     .profile{
-        width:  100%;
         height: fit-content;
         display: flex;
         flex-direction: column;

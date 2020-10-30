@@ -27,11 +27,14 @@
 @import url(../block/footer/footer.css);
 @import url(../block/footer/__copy/footer__copy.css);
 
-@import url(../block/editForm/editform.css);
-@import url(../block/editForm/__title/editForm__title.css);
-@import url(../block/editForm/__fieldName/editForm__fieldName.css);
-@import url(../block/editForm/__fieldSubtitle/editForm__fieldSubtitle.css);
-@import url(../block/editForm/__form/editForm__form.css);
-@import url(../block/editForm/__close/editForm__close.css);
-@import url(../block/editForm/__overlay/editForm__overlay.css);
-@import url(../block/editForm/__submitButton/editForm__submitButton.css);
+@import url(../block/edit-form/edit-form.css);
+@import url(../block//edit-form//__hidden/edit-form__hidden.css);
+@import url(../block//edit-form/__open/edit-form__open.css);
+@import url(../block/edit-form/__title/edit-form__title.css);
+@import url(../block//edit-form//__input/edit-form__input.css);
+@import url(../block/edit-form/__fieldName/edit-form__fieldName.css);
+@import url(../block/edit-form/__fieldSubtitle/edit-form__fieldSubtitle.css);
+@import url(../block/edit-form/__form/edit-form__form.css);
+@import url(../block/edit-form/__close/edit-form__close.css);
+@import url(../block/edit-form/__overlay/edit-form__overlay.css);
+@import url(../block/edit-form/__submitButton/edit-form__submitButton.css);

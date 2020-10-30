@@ -1,15 +1,22 @@
-.editForm__close{
+.edit-form__close{
     grid-row: 1/2;
     grid-column: 1/2;
     z-index: 2;
     margin: 146px auto 0 calc(50% + 200px);
+    background-image: url(../../../iamges/Close\ Icon.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
 }
-.editForm__close:hover{
+.edit-form__close:hover{
     opacity: 0.8;
     cursor: pointer;
 }
 @media  (max-width: 568px){
-    .editForm__close{
+    .edit-form__close{
         width: 26px;
         height: 26px;
         margin: 72px auto 0 calc(50% + 100px);

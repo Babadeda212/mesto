@@ -4,15 +4,17 @@
     margin: 6% 0 0 100%;
     grid-column: 1/2;
     grid-row: 1/2;
+    background-image: url(../../../iamges/Edit\ Button.svg);
+    background-color: transparent;
+    border: 0;
+    padding: 0;
 }
 .profile__info-edit-button:hover{
-    opacity: 0.8;
+    opacity: 0.6;
     cursor: pointer;
 }
 @media  (max-width: 890px){
     .profile__info-edit-button{
-        width: 24px;
-        height: 24px;
         margin-left: 80%;
         margin-top: 2%;
 

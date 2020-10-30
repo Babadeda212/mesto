@@ -12,14 +12,11 @@
 }
 @media  (max-width: 890px){
     .profile__info-title{
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 500;
         font-size: 27px;
         line-height: 33px;
         text-align: center;
-        color: #FFFFFF;
         margin-bottom: 14px;
+        width: fit-content;
     }
 
 }

@@ -1,4 +1,4 @@
-.editForm__form{
+.edit-form__form{
     width: 430px;
     height: 330px;
     background-color: #FFFFFF;
@@ -10,15 +10,9 @@
     text-align: center;
 }
 @media  (max-width: 568px){
-    .editForm__form{
+    .edit-form__form{
         width: 282px;
         height: 322px;
-        background-color: #FFFFFF;
-        grid-row: 1/2;
-        grid-column: 1/2;
-        z-index: 2;
         margin: 123px auto 0;
-        border-radius: 10px;
-        text-align: center;
     }
 }
