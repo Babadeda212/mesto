@@ -1,14 +1,17 @@
 .profile__info-title{
     margin: 0;
-    font-family: Inter;
+    font-family: Inter,sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 42px;
     line-height: 56px;
     color: #FFFFFF;
-    width: 400px;
     grid-column: 1/2;
     grid-row: 1/2;
+    text-overflow: ellipsis;
+    max-width: 400px; 
+    overflow: hidden; 
+    white-space: nowrap;
 }
 @media  (max-width: 890px){
     .profile__info-title{
