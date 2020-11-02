@@ -9,8 +9,8 @@
     grid-column: 1/2;
     grid-row: 1/2;
     text-overflow: ellipsis;
-    max-width: 400px; 
-    overflow: hidden; 
+    max-width: 400px;
+    overflow: hidden;
     white-space: nowrap;
 }
 @media  (max-width: 890px){
