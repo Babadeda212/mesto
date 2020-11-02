@@ -12,12 +12,12 @@ let saveButton = document.querySelector('.popup__form-save');
 
 
 function openFormEdit() {
-    popup.classList.remove('popup__hidden');
-    popup.classList.add('popup__open');
+    popup.classList.remove('popup-hidden');
+    popup.classList.add('popup-open');
 }
 function closeForm(){
-    popup.classList.add('popup__hidden');
-    popup.classList.remove('popup__open');
+    popup.classList.add('popup-hidden');
+    popup.classList.remove('popup-open');
 }
 function addTextProfile(evt){
     evt.preventDefault();
@@ -28,12 +28,12 @@ function addTextProfile(evt){
     closeForm();
 }
 function openPopup(){
-    popup.classList.remove('popup__hidden');
-    popup.classList.add('popup__open');
+    popup.classList.remove('popup-hidden');
+    popup.classList.add('popup-open');
 }
 function closePopup(){
-    popup.classList.add('popup__hidden');
-    popup.classList.remove('popup__open');
+    popup.classList.add('popup-hidden');
+    popup.classList.remove('popup-open');
 }
 popup.addEventListener('submit',addTextProfile);
 buttonEditProfile.addEventListener('click',openPopup);
