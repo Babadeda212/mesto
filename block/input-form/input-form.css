@@ -1,11 +1,10 @@
-.edit-form__input{
+.input-form{
     width: 358px;
-    height: 27px;
     border:0;
     border-bottom: 1px solid rgb(0,0,0,0.2);
     margin-bottom: 30px;
     padding: 0  0 13px;
-
+    text-align: left;
     font-family: Inter,sans-serif;
     font-style: normal;
     font-weight: 100;
@@ -13,8 +12,8 @@
     line-height: 17px;
     color: #000000;
 }
-@media  (max-width: 568px){
-    .edit-form__input{
+@media (max-width: 568px){
+    .input-form{
         width: 238px;
     }
 }

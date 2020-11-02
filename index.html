@@ -7,16 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="root">
-    <div class="edit-form edit-form__hidden">
-        <div class="edit-form__overlay">
+    <div class="popup popup__hidden">
+        <div class="popup__container">
+            <div class="popup__overlay"></div>
+            <button class="popup__button-close"></button>
+            <form class="popup__form form">
+                <h2 class="popup__form-title">Редактировать профиль</h2>
+                <input class="popup__form-name input-form" value="Жак-Ив Кусто" type="text">
+                <input class="popup__form-subname input-form" value="Исследователь океана" type="text">
+                <button class="popup__form-save">Сохранить</button>
+            </form>
         </div>
-        <button class="edit-form__close" type="button"></button>
-        <form class="edit-form__form" name="edit-form__form">
-            <h2 class="edit-form__title">Редактировать профиль</h2>
-            <input type="text" value="Жак-Ив Кусто" class="edit-form__fieldName edit-form__input" name="edit-form__fieldName">
-            <input type="text" value="Исследователь океана" class="edit-form__fieldSubtitle edit-form__input" name="edit-form__fieldSubtitle">
-            <button class="edit-form__submitButton" type="submit">Сохранить</button>
-        </form>
     </div>
     <div class="page">
         <header class="header">

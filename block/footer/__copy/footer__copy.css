@@ -7,3 +7,10 @@
     color: #545454;
     margin: 0;
 }
+@media  (max-width: 500px){
+    .footer__copy{
+        font-size: 14px;
+        line-height: 17px;
+        margin-left: 19px;
+    }
+}

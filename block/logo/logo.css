@@ -1,3 +1,11 @@
 .logo{
     margin-bottom: 41px;
 }
+@media (max-width: 500px){
+    .logo{
+        width: 103.74px;
+        height: 24.4px;
+        margin-bottom: 31px;
+        margin-left: 27px;
+    }
+}

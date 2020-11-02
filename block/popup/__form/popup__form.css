@@ -1,20 +1,18 @@
-.edit-form__form{
+.popup__form{
     width: 430px;
     height: fit-content;
     background-color: #FFFFFF;
     grid-row: 1/2;
     grid-column: 1/2;
     z-index: 2;
-    margin: 195px auto 0;
     border-radius: 10px;
     text-align: center;
-    position: sticky;
+    position: fixed;
     top: 195px;
 }
-@media  (max-width: 568px){
-    .edit-form__form{
-        width: 282px;
-        height: 322px;
-        margin: 123px auto 0;
-    }
+@media (max-width:568px){
+ .popup__form{
+    width: 282px;
+
+ }
 }

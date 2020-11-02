@@ -1,33 +1,40 @@
 let buttonEditProfile =document.querySelector('.profile__info-edit-button');
-let formEdit = document.querySelector('.edit-form');
-let closeButtonFormEdit = document.querySelector('.edit-form__close');
-let nameFormEdit = document.querySelector('.edit-form__fieldName');
-let subNameFormEdit = document.querySelector('.edit-form__fieldSubtitle');
-let saveButton = document.querySelector('.edit-form__submitButton');
+
 let profileName = document.querySelector('.profile__info-title');
 let profileSubtitle = document.querySelector('.profile__info-subtitle');
-let form=document.querySelector('.edit-form__form');
+
+let popup=document.querySelector('.popup');
+let popupClose=document.querySelector('.popup__button-close');
+let nameInput=document.querySelector('.popup__form-name');
+let subNameInput=document.querySelector('.popup__form-subname');
+let saveButton = document.querySelector('.popup__form-save');
+
 
 
 function openFormEdit() {
-    formEdit.classList.remove('edit-form__hidden');
-    formEdit.classList.add('edit-form__open');
+    popup.classList.remove('popup__hidden');
+    popup.classList.add('popup__open');
 }
 function closeForm(){
-    formEdit.classList.add('edit-form__hidden');
-    formEdit.classList.remove('edit-form__open');
-    nameFormEdit.value=profileName.textContent;
-    subNameFormEdit.value=profileSubtitle.textContent;
+    popup.classList.add('popup__hidden');
+    popup.classList.remove('popup__open');
 }
 function addTextProfile(evt){
     evt.preventDefault();
-    let name = nameFormEdit.value;
-    let subName= subNameFormEdit.value;
+    let name = nameInput.value;
+    let subName= subNameInput.value;
     profileName.textContent=name;
     profileSubtitle.textContent=subName;
     closeForm();
 }
-
-form.addEventListener('submit',addTextProfile);
-buttonEditProfile.addEventListener('click',openFormEdit);
-closeButtonFormEdit.addEventListener('click',closeForm);
+function openPopup(){
+    popup.classList.remove('popup__hidden');
+    popup.classList.add('popup__open');
+}
+function closePopup(){
+    popup.classList.add('popup__hidden');
+    popup.classList.remove('popup__open');
+}
+popup.addEventListener('submit',addTextProfile);
+buttonEditProfile.addEventListener('click',openPopup);
+popupClose.addEventListener('click',closePopup);

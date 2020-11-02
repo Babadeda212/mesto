@@ -1,8 +1,5 @@
-.edit-form__close{
-    grid-row: 1/2;
-    grid-column: 1/2;
+.popup__button-close{
     z-index: 2;
-    margin: 146px auto 0 calc(50% + 200px);
     background-image: url(../../../images/Close\ Icon.svg);
     background-repeat: no-repeat;
     width: 50px;
@@ -11,18 +8,20 @@
     padding: 0;
     border: 0;
     background-position: center;
-    position: sticky;
-    top: 146px;
+    position: fixed;
+    margin-left: 250px;
+    top: 175px;
 }
-.edit-form__close:hover{
-    opacity: 0.8;
+.popup__button-close:hover{
+    opacity: 0.6;
     cursor: pointer;
 }
 @media  (max-width: 568px){
-    .edit-form__close{
+    .popup__button-close{
         width: 26px;
         height: 26px;
         background-size: contain;
-        margin: 72px auto 0 calc(50% + 100px);
+        margin-left: 130px;
+        top: 162px;
     }
 }
