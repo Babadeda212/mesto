@@ -13,8 +13,8 @@ let saveButton = document.querySelector('.popup__form-save');
 function openPopup(){
     popup.classList.remove('popup_hidden');
     popup.classList.add('popup_open');
-    nameInput.textContent=profileName.value;
-    subNameInput.textContent=profileSubtitle.value;
+    nameInput.value=profileName.textContent;
+    subNameInput.value=profileSubtitle.textContent;
 }
 function closePopup(){
     popup.classList.add('popup_hidden');
