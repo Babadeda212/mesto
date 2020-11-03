@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="root">
-    <div class="popup popup-hidden">
+    <div class="popup popup__hidden">
         <div class="popup__container">
-            <div class="popup__overlay"></div>
             <button class="popup__button-close" type="button"></button>
-            <form class="popup__form form">
+            <form class="popup__form form" name='popup__form'>
                 <h2 class="popup__form-title">Редактировать профиль</h2>
-                <input class="popup__form-name input-form" value="Жак-Ив Кусто" type="text">
-                <input class="popup__form-subname input-form" value="Исследователь океана" type="text">
+                <input class="popup__form_name popup__input-form" value="Жак-Ив Кусто" type="text">
+                <input class="popup__form_subname popup__input-form" value="Исследователь океана" type="text">
                 <button class="popup__form-save" type="submit">Сохранить</button>
             </form>
         </div>
@@ -35,7 +34,7 @@
                          Исследователь океана
                     </p>
                 </div>
-                <button class="profile__add-button" type="button"></button>
+                <button class="profile__add-button" type="button">+</button>
             </section>
             <section class="elements">
                 <div class="element">

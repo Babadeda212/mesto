@@ -13,5 +13,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: normal;
+        margin-bottom: 36px;
     }
 }

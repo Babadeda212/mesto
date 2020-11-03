@@ -1,5 +1,4 @@
 .popup__button-close{
-    z-index: 2;
     background-image: url(../../../images/Close\ Icon.svg);
     background-repeat: no-repeat;
     width: 50px;
@@ -8,9 +7,9 @@
     padding: 0;
     border: 0;
     background-position: center;
-    position: fixed;
-    margin-left: 250px;
-    top: 175px;
+    position: absolute;
+    top: -45px;
+    right: -45px;
 }
 .popup__button-close:hover{
     opacity: 0.6;
