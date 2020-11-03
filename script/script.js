@@ -3,6 +3,7 @@ let buttonEditProfile =document.querySelector('.profile__info-edit-button');
 let profileName = document.querySelector('.profile__info-title');
 let profileSubtitle = document.querySelector('.profile__info-subtitle');
 
+let form=document.querySelector('.form');
 let popup=document.querySelector('.popup');
 let popupClose=document.querySelector('.popup__button-close');
 let nameInput=document.querySelector('.popup__input_name_name');
@@ -28,6 +29,6 @@ function addTextProfile(evt){
     profileSubtitle.textContent=subName;
     closePopup();
 }
-popup.addEventListener('submit',addTextProfile);
+form.addEventListener('submit',addTextProfile);
 buttonEditProfile.addEventListener('click',openPopup);
 popupClose.addEventListener('click',closePopup);
