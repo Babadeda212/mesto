@@ -5,20 +5,20 @@ let profileSubtitle = document.querySelector('.profile__info-subtitle');
 
 let popup=document.querySelector('.popup');
 let popupClose=document.querySelector('.popup__button-close');
-let nameInput=document.querySelector('.popup__form_name');
-let subNameInput=document.querySelector('.popup__form_subname');
+let nameInput=document.querySelector('.popup__input_name_name');
+let subNameInput=document.querySelector('.popup__input_name_description');
 let saveButton = document.querySelector('.popup__form-save');
 
 
 function openPopup(){
-    popup.classList.remove('popup__hidden');
-    popup.classList.add('popup__open');
+    popup.classList.remove('popup_hidden');
+    popup.classList.add('popup_open');
     profileName.textContent=nameInput.value;
     profileSubtitle.textContent=subNameInput.value;
 }
 function closePopup(){
-    popup.classList.add('popup__hidden');
-    popup.classList.remove('popup__open');
+    popup.classList.add('popup_hidden');
+    popup.classList.remove('popup_open');
 }
 function addTextProfile(evt){
     evt.preventDefault();

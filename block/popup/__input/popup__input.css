@@ -1,4 +1,4 @@
-.popup__input-form{
+.popup__input{
     width: 358px;
     border:0;
     border-bottom: 1px solid rgb(0,0,0,0.2);
@@ -13,7 +13,7 @@
     color: #000000;
 }
 @media (max-width: 568px){
-    .popup__input-form{
+    .popup__input{
         width: 238px;
     }
 }
