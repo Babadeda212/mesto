@@ -5,6 +5,9 @@
     margin-right: 18px;
     margin-top:20px;
 }
+.element:hover{
+    cursor: pointer;
+}
 .element:nth-of-type(3n+3){
     margin-right:0;
 }
