@@ -4,7 +4,6 @@
     border-radius: 10px;
     text-align: center;
     position: relative;
-    animation: fade_in_show 0.5s
 }
 @media (max-width:568px){
  .popup__container{
