@@ -97,11 +97,11 @@ buttonEditProfile.addEventListener('click',openPopup);
 popupClose.addEventListener('click',closePopup);
 lodeCard();
 //Редактирования карниток 
-const formImage = document.querySelector('.image__form');
+const formImage = document.querySelector('#image__form');
 const closeButtonFormImage = document.querySelector('#popupImageClose');
 const addImageButton = document.querySelector('.profile__add-button');
-const nameImage = document.querySelector('.image__input_name');
-const linkImage = document.querySelector('.image__input_link');
+const nameImage = document.querySelector('#image__input_name');
+const linkImage = document.querySelector('#image__input_link');
 const saveAddImage = document.querySelector('#imageSave');
 
 
