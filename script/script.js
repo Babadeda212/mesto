@@ -75,7 +75,6 @@ const buttonEditProfile =document.querySelector('.profile__info-edit-button');
 const profileName = document.querySelector('.profile__info-title');
 const profileSubtitle = document.querySelector('.profile__info-subtitle');
 const addImageButton = document.querySelector('.profile__add-button');
-
 const popupProfile=document.querySelector('.popup_profile');
 const formProfil=popupProfile.querySelector('.form');
 const popupClose=popupProfile.querySelector('.popup__button-close');
@@ -111,8 +110,6 @@ const closeButtonFormImage = popupPlace.querySelector('.popup__button-close');
 const nameImage = popupPlace.querySelector('#image__input_name');
 const linkImage = popupPlace.querySelector('#image__input_link');
 const saveAddImage = popupPlace.querySelector('.popup__form-save');
-
-
 
 function addImage(evt){
     evt.preventDefault();
