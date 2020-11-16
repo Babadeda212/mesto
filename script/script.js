@@ -26,7 +26,7 @@ const initialCards = [
 ]; 
 // создание карточек 
 function createCard(name,link){
-    const oneCard = elementTamplet.cloneNode(true);
+    const oneCard = elementTemplet.cloneNode(true);
         const elementImage = oneCard.querySelector('.element__image');
         elementImage.src = link;
         elementImage.alt = name;
@@ -41,7 +41,7 @@ function createCard(name,link){
         elementImage.addEventListener('click',function(){
             openImage(name, link);
         })
-        elements.prepend(oneCard);
+        return oneCard;
 }
 // открыте popup
 function openPopup(popup){
@@ -58,15 +58,13 @@ function closePopup(popup){
 
 
 // Загрузка картинок
-const elementTamplet = document.querySelector('#template__element').content; 
+const elementTemplet = document.querySelector('#template__element').content; 
 const elements = document.querySelector('.elements');
-let titleNameImage;
-let srcImage;
 
-
-function loadCard(){
+function loadCards(){
     for(let i=0;i<initialCards.length;i=i+1){
-       createCard(initialCards[i].name,initialCards[i].link);
+      const card=createCard(initialCards[i].name,initialCards[i].link);
+        elements.prepend(card);
     }
 }
 
@@ -78,9 +76,8 @@ const addImageButton = document.querySelector('.profile__add-button');
 const popupProfile=document.querySelector('.popup_profile');
 const formProfil=popupProfile.querySelector('.form');
 const popupClose=popupProfile.querySelector('.popup__button-close');
-let nameInput=popupProfile.querySelector('.popup__input_name_name');
-let subNameInput=popupProfile.querySelector('.popup__input_name_description');
-const saveButton = popupProfile.querySelector('.popup__form-save');
+const nameInput=popupProfile.querySelector('.popup__input_name_name');
+const subNameInput=popupProfile.querySelector('.popup__input_name_description');
 
 function openPopupProfile(){
     openPopup(popupProfile);
@@ -89,13 +86,13 @@ function openPopupProfile(){
 }
 function addTextProfile(evt){
     evt.preventDefault();
-    let name = nameInput.value;
-    let subName= subNameInput.value;
+    const name = nameInput.value;
+    const subName= subNameInput.value;
     profileName.textContent=name;
     profileSubtitle.textContent=subName;
     closePopup(popupProfile);
 }
-loadCard();
+loadCards();
 formProfil.addEventListener('submit',addTextProfile);
 buttonEditProfile.addEventListener('click',openPopupProfile);
 popupClose.addEventListener('click',() => closePopup(popupProfile));
@@ -113,7 +110,8 @@ const saveAddImage = popupPlace.querySelector('.popup__form-save');
 
 function addImage(evt){
     evt.preventDefault();
-    createCard(nameImage.value,linkImage.value);
+    const card = createCard(nameImage.value,linkImage.value);
+    elements.prepend(card);
     closePopup(popupPlace)
     nameImage.value='';
     linkImage.value='';
