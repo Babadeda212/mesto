@@ -43,29 +43,46 @@ function createCard(name,link){
         })
         return oneCard;
 }
+
+
+function closeByEsc(evt){
+    const popup = document.querySelector('.popup_opened');
+   
+       if(evt.key==='Escape'){
+            closePopup(popup);
+        }
+}
+function closeByOverlayClick(evt){
+    const popup = document.querySelector('.popup_opened');
+    if(evt.target.classList.contains('popup')){
+        closePopup(popup);
+    }
+}
 // открыте popup
-function openPopup(popup){
+function openPopup(popup,evt){
     popup.classList.add('popup_opened');
-    console.log("Открылось");
-
-    popup.addEventListener('click',(evt) =>{
-        if(evt.target.classList[0]==='popup'){
-            closePopup(popup);
-        }
-    });
-
-    document.addEventListener('keydown',(evt)=>{
-        if(evt.key==='Escape'){
-            closePopup(popup);
-        }
-    })
+    document.addEventListener('keydown',closeByEsc);
+    popup.addEventListener('click',closeByOverlayClick);
 }
 
-function closePopup(popup){   
+function closePopup(popup){  
     popup.classList.remove('popup_opened');
-    console.log("Закрылось");
+    const buttonSave = popup.querySelector('#popupSave');
+    document.removeEventListener('keydown',closeByEsc);
+    popup.removeEventListener('click',closeByOverlayClick);
+    disableButton(buttonSave,popup);
 }
-
+function disableButton(popupButton,popup){ 
+    
+    if(popup!==popupImage){
+        if(popupButton.classList.length === 1){
+            popupButton.classList.add('popup__save_disabled');
+            popupButton.classList.remove('popup__save');
+            popupButton.disabled = true;
+        }
+    }
+    
+}
 
 
 // Загрузка картинок
@@ -84,21 +101,23 @@ const buttonEditProfile =document.querySelector('.profile__info-edit-button');
 const profileName = document.querySelector('.profile__info-title');
 const profileSubtitle = document.querySelector('.profile__info-subtitle');
 const addImageButton = document.querySelector('.profile__add-button');
-const popupProfile=document.querySelector('.popup__profile');
-const formProfil=popupProfile.querySelector('.popup__form_type_profile');
-const popupClose=popupProfile.querySelector('.popup__close-type-profile');
-const nameInput=popupProfile.querySelector('.popup__input_type_name');
-const subNameInput=popupProfile.querySelector('.popup__input_type_job');
+const popupProfile = document.querySelector('.popup__profile');
+const formProfil = popupProfile.querySelector('.popup__form_type_profile');
+const popupClose = popupProfile.querySelector('.popup__close-type-profile');
+const nameInput = popupProfile.querySelector('.popup__input_type_name');
+const subNameInput = popupProfile.querySelector('.popup__input_type_job');
 
 function openPopupProfile(){
     openPopup(popupProfile);
-    nameInput.value=profileName.textContent;
-    subNameInput.value=profileSubtitle.textContent;
+    nameInput.value = profileName.textContent;
+    subNameInput.value = profileSubtitle.textContent;
 }
+
 function addTextProfile(evt){
     evt.preventDefault();
+    //const button =  popupProfile.querySelector('.popup__save');
     const name = nameInput.value;
-    const subName= subNameInput.value;
+    const subName = subNameInput.value;
     profileName.textContent=name;
     profileSubtitle.textContent=subName;
     closePopup(popupProfile);
@@ -124,12 +143,15 @@ function addImage(evt){
     const card = createCard(nameImage.value,linkImage.value);
     elements.prepend(card);
     closePopup(popupPlace)
-    nameImage.value='';
-    linkImage.value='';
+    
     
 }
 formImage.addEventListener('submit',addImage);
-addImageButton.addEventListener('click',() => openPopup(popupPlace));
+addImageButton.addEventListener('click',() => {
+    openPopup(popupPlace);
+    nameImage.value='';
+    linkImage.value='';
+});
 closeButtonFormImage.addEventListener('click',() => closePopup(popupPlace));
 
 // Открытие каринток 
@@ -141,10 +163,12 @@ const imagelink = popupImage.querySelector('.image-popup');
 
 function openImage(name,link){
     imageName.textContent = name;
+    imagelink.alt = name;
     imagelink.src = link;
     openPopup(popupImage)
 }
 
 closeButtonImage.addEventListener('click',() => closePopup(popupImage));
 
+//Закрытие на оверлей
 

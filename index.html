@@ -11,12 +11,12 @@
         <div class="popup__container">
           <button type="button" class="popup__close popup__close-type-profile"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form popup__form_type_profile" name="form" method="POST" novalidate>
+          <form class="popup__form popup__form_type_profile" name="form_profil" method="POST" novalidate>
             <input type="text" id="name" required minlength="2" maxlength="40" class="popup__input popup__input_type_name" placeholder="Имя">
             <span id="name-error" class="error"></span>
             <input type="text" id="job" required minlength="2" maxlength="200" class="popup__input popup__input_type_job" placeholder="О себе">
             <span id="job-error" class="error"></span>
-            <button type="submit" class="popup__save" >Сохранить</button>
+            <button type="submit" class="popup__save" id='popupSave'>Сохранить</button>
           </form>
         </div>
       </div>
@@ -24,12 +24,12 @@
         <div class="popup__container">
           <button type="button" class="popup__close popup__close-type-image"></button>
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form popup__form_type_image" name="form" method="POST" novalidate>
+          <form class="popup__form popup__form_type_image" name="form_image" method="POST" novalidate>
             <input type="text" id="place" class="popup__input popup__input_type_place" minlength="2" maxlength="30" required placeholder="Название">
             <span id="place-error" class="error"></span>
             <input type="url" id="link" class="popup__input popup__input_type_link" required placeholder="Ссылка на картинку" >
             <span id="link-error" class="error"></span>
-            <button type="submit" class="popup__save">Создать</button>
+            <button type="submit" class="popup__save" id='popupSave'>Создать</button>
           </form>
         </div>
       </div>
