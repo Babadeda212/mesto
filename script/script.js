@@ -45,16 +45,15 @@ function createCard(name,link){
 }
 
 
-function closeByEsc(evt){
-    const popup = document.querySelector('.popup_opened');
-   
+function closeByEsc(evt){   
        if(evt.key==='Escape'){
+        const popup = document.querySelector('.popup_opened');
             closePopup(popup);
         }
 }
 function closeByOverlayClick(evt){
-    const popup = document.querySelector('.popup_opened');
     if(evt.target.classList.contains('popup')){
+        const popup = document.querySelector('.popup_opened');
         closePopup(popup);
     }
 }
@@ -70,19 +69,9 @@ function closePopup(popup){
     const buttonSave = popup.querySelector('#popupSave');
     document.removeEventListener('keydown',closeByEsc);
     popup.removeEventListener('click',closeByOverlayClick);
-    disableButton(buttonSave,popup);
-}
-function disableButton(popupButton,popup){ 
-    
-    if(popup!==popupImage){
-        if(popupButton.classList.length === 1){
-            popupButton.classList.add('popup__save_disabled');
-            popupButton.classList.remove('popup__save');
-            popupButton.disabled = true;
-        }
-    }
     
 }
+
 
 
 // Загрузка картинок
@@ -109,6 +98,7 @@ const subNameInput = popupProfile.querySelector('.popup__input_type_job');
 
 function openPopupProfile(){
     openPopup(popupProfile);
+    disableButton(popupProfile);
     nameInput.value = profileName.textContent;
     subNameInput.value = profileSubtitle.textContent;
 }
@@ -148,6 +138,7 @@ function addImage(evt){
 }
 formImage.addEventListener('submit',addImage);
 addImageButton.addEventListener('click',() => {
+    disableButton(popupPlace);
     openPopup(popupPlace);
     nameImage.value='';
     linkImage.value='';

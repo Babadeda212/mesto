@@ -1,17 +1,4 @@
 
 .popup__save_disabled {
-    background-color: transparent;
-    color: 	rgba(0,0,0,.2);
-    margin-top: 38px;
-    z-index: 10;
-    height: 50px;
-    width: 100%;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 2px;
+    opacity: 0.2;
 }

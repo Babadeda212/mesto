@@ -46,12 +46,10 @@ function setEventListeners(formElement, inputSelector, buttonElement,inactiveBut
   function toggleButtonState(buttonElem, isActive,inactiveButtonClass) {
       if (!isActive) {
           buttonElem.disabled = true;
-          buttonElem.classList.add(inactiveButtonClass); // Почему то, если просто добавить popup__save_disabled кнопка не поменятся, свойства не присвояться и кнопка останется прежней 
-          buttonElem.classList.remove('popup__save');    // В браузере, в панели, свойства перечекнуты и не активны  
+          buttonElem.classList.add(inactiveButtonClass); 
       } else {
         buttonElem.disabled = false;
         buttonElem.classList.remove(inactiveButtonClass);
-        buttonElem.classList.add('popup__save');
       }
   }
 // Валидация формы и инпутов
@@ -73,6 +71,12 @@ function setEventListeners(formElement, inputSelector, buttonElement,inactiveBut
       errorElement.textContent = '';
       input.classList.remove(inputErrorClass);
   }
-
-
+//Блокировака кнопки после сабмита
+  function disableButton(popup){ 
+    popupButton = popup.querySelector('.popup__save');
+    if(popupButton.classList.length === 1){
+        popupButton.classList.add('popup__save_disabled');
+        popupButton.disabled = true;
+    }
+}
 
