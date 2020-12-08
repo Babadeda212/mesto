@@ -19,7 +19,7 @@ function openPopup(popup,evt){
 
 function closePopup(popup){  
     popup.classList.remove('popup_opened');
-    const buttonSave = popup.querySelector('#popupSave');
+    const buttonSave = popup.querySelector('.popup__save');
     document.removeEventListener('keydown',closeByEsc);
     popup.removeEventListener('click',closeByOverlayClick);
     
