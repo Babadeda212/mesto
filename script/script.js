@@ -30,7 +30,7 @@ const buttonEditProfile =document.querySelector('.profile__info-edit-button');
 const profileName = document.querySelector('.profile__info-title');
 const profileSubtitle = document.querySelector('.profile__info-subtitle');
 const addImageButton = document.querySelector('.profile__add-button');
-const popupProfile = document.querySelector('.popup__profile');
+const popupProfile = document.querySelector('.popup_profile');
 const formProfil = popupProfile.querySelector('.popup__form_type_profile');
 const popupClose = popupProfile.querySelector('.popup__close-type-profile');
 const nameInput = popupProfile.querySelector('.popup__input_type_name');
@@ -64,7 +64,7 @@ initialCards.forEach((item) => {
   
 
 //Редактирования карниток 
-const popupPlace = document.querySelector('.popup__add-card')
+const popupPlace = document.querySelector('.popup_add-card')
 
 const formImage = popupPlace.querySelector('.popup__form_type_image');
 const closeButtonFormImage = popupPlace.querySelector('.popup__close-type-image');
@@ -89,7 +89,7 @@ addImageButton.addEventListener('click',() => {
 closeButtonFormImage.addEventListener('click',() => closePopup(popupPlace));
 
 // Открытие каринток 
-const popupImage = document.querySelector('.popup__fullimage');
+const popupImage = document.querySelector('.popup_fullimage');
 const elemImage = popupImage.querySelector('.image');
 const closeButtonImage = popupImage.querySelector('.popup__close-type-fullimage');
 const imageName = popupImage.querySelector('.popup__image-title');
