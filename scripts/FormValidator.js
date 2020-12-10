@@ -1,11 +1,4 @@
-export const enableValidation = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__save_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible' 
-  };
+
 
 // Создание класса валидации
 export class FormValidator {
@@ -15,7 +8,7 @@ export class FormValidator {
         this._inputSelector = popupElements.inputSelector;
         this._submitButtonSelector = popupElements.submitButtonSelector;
         this._inputErrorClass = popupElements.inputErrorClass;
-        this._inputError = popupElements.inputError;
+        this._inputError = popupElements.inactiveButtonClass;
         this._errorClass = popupElements.errorClass;
         this._inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
         this._errors = Array.from(this._form.querySelectorAll(this._inputError));
@@ -24,7 +17,7 @@ export class FormValidator {
     // Дизейбл кнопки сабмита
     _disableSubmitButton() {
         this._button.setAttribute("disabled", true);
-        this._button.classList.add("popup__save_disabled");
+        this._button.classList.add(this._inputError);
     }
 
     // Переключение состояния кнопки
@@ -33,10 +26,10 @@ export class FormValidator {
             this._disableSubmitButton();
         } else {
             this._button.removeAttribute("disabled", true);
-            this._button.classList.remove("popup__save_disabled");
+            this._button.classList.remove(this._inputError);
         }
     }
-
+ 
     // Проверка массива инпутов на валидность
     _hasInvalidInput() {
         return this._inputs.some((inputElement) => {
@@ -98,5 +91,26 @@ export class FormValidator {
             event.preventDefault(),
             this._toggleSubmit(),
         );
+    }
+    //Дизейбл при закрытии попапа
+    disableButton(){
+        this._button = this._form.querySelector(this._submitButtonSelector);
+        this._button.setAttribute("disabled", true);
+        this._button.classList.add(this._inputError);  
+    }
+    // Убирает ошибку 
+    disableError(){
+       this._elemError = this._form.querySelectorAll('.error');
+       this._elemInput = this._form.querySelectorAll(this._inputSelector);
+       if(this._elemError[0].classList.contains(this._errorClass)){
+        this._elemInput[0].classList.remove(this._inputErrorClass);
+        this._elemError[0].textContent = "";
+       }
+       if(this._elemError[1].classList.contains(this._errorClass)){
+        this._elemInput[1].classList.remove(this._inputErrorClass);
+        this._elemError[1].textContent = "";
+       }
+       
+
     }
 }
