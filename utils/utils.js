@@ -37,5 +37,5 @@ function openImage(name,link){
     imagelink.src = link;
     openPopup(popupImage)
 }
-closeButtonImage.addEventListener('click',() => closePopup(popupImage));
-export {openImage,openPopup,closePopup};
+
+export {openImage,openPopup,closePopup,closeButtonImage,popupImage};

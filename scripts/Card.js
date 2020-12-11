@@ -28,7 +28,7 @@ export class createCardClass{
             const oneElem = evt.target.closest('.element');
             oneElem.remove();
         })
-        this._element.querySelector('.element__image').addEventListener('click',function(evt){
+        this._elementImage.addEventListener('click',function(evt){
             openImage(evt.target.alt,evt.target.src);
         })
     }
