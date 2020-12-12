@@ -17,7 +17,7 @@ const nameInput = popupProfile.querySelector('.popup__input_type_name');
 const subNameInput = popupProfile.querySelector('.popup__input_type_job');
 
 function openPopupProfile(){
-    const editPopupValidation = new FormValidator(validationConfig , popupProfile);
+    
     editPopupValidation.disableButton();
     openPopup(popupProfile);
     nameInput.value = profileName.textContent;
@@ -64,14 +64,13 @@ const saveAddImage = popupPlace.querySelector('.popup__save');
 function addImage(evt){
     evt.preventDefault();
     elem.prepend(createCard(nameImage.value,linkImage.value));
-    addPopupValidation.enableValidation();
+    
     closePopup(popupPlace)
 }
 formImage.addEventListener('submit',addImage);
 addImageButton.addEventListener('click',() => {
-    const editPopupValidation = new FormValidator(validationConfig , popupPlace);
-    editPopupValidation.disableButton();
-    editPopupValidation.disableError();
+    addPopupValidation.disableButton();
+    addPopupValidation.disableError();
     openPopup(popupPlace);
     nameImage.value='';
     linkImage.value='';
@@ -82,8 +81,7 @@ closeButtonFormImage.addEventListener('click',() => closePopup(popupPlace));
 //закрытие картинок 
 closeButtonImage.addEventListener('click',() => closePopup(popupImage));
 //Валидация
-
-const editPopupValidation = new FormValidator(validationConfig , popupPlace),
-    addPopupValidation = new FormValidator(validationConfig , popupProfile);
+const addPopupValidation = new FormValidator(validationConfig , popupPlace);
+const editPopupValidation = new FormValidator(validationConfig , popupProfile);
     editPopupValidation.enableValidation();
     addPopupValidation.enableValidation();
