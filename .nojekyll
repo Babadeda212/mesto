@@ -1,9 +1,0 @@
-pwd
-Users\moroz\dev\Sprint4\mesto
-
-git branch
-* master
-develop
-
-touch .nojekyll
-git add . && git commit -m "added nojekyll"
