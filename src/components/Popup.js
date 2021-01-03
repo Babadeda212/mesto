@@ -1,13 +1,13 @@
-import {ESC_KEY} from "../utils/constants.js";
+
 
 export default class Popup {
   constructor(popupSelector) {
-    this._popupSelector = document.querySelector(popupSelector);
-    this._closePopupButton = this._popupSelector.querySelector(".button_action_close");
-    this._popupOverlay = this._popupSelector.querySelector(".popup__overlay");
+    this._popup = document.querySelector(popupSelector);
+    this._closePopupButton = this._popup.querySelector(".button_action_close");
+    this._popupOverlay = this._popup.querySelector(".popup__overlay");
 
     this._handleEscClose = (evt) => {
-      if (evt.key === ESC_KEY) {
+      if (evt.key === 'Escape') {
         this.close();
       }
     }
@@ -26,12 +26,12 @@ export default class Popup {
   }
 
   open() {
-    this._popupSelector.classList.add("modal_is-opened");
+    this._popup.classList.add("modal_is-opened");
     this.setEventListeners();
   }
 
   close() {
-    this._popupSelector.classList.remove("modal_is-opened");
+    this._popup.classList.remove("modal_is-opened");
     this.removeEventListeners();
   }
 

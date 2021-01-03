@@ -26,7 +26,7 @@ const createCard = (data) => {
 
 const userInfo = new UserInfo(userProfile);
 
-const modal = new PopupWithImage(".popup__image");
+const imageModal = new PopupWithImage(".popup__image");
 
 const placePopup = new PopupWithForm({
   popupSelector: `form[name="place"]`,
@@ -43,7 +43,7 @@ const profilePopup = new PopupWithForm({
 });
 
 const handleCardClick = (image, title) => {
-  modal.open(image, title);
+  imageModal.open(image, title);
 };
 
 addButton.addEventListener("click", () => {
