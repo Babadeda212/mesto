@@ -1,49 +1,43 @@
+import { selectors, keyCodes } from "../utils/constants.js";
 
+const {
+  popupSelectors: { closeButtonSelector, openClass, containerClass },
+} = selectors;
+const { escapeKeyCode } = keyCodes;
 
-export default class Popup {
+export class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
-    this._closePopupButton = this._popup.querySelector(".button_action_close");
-    this._popupOverlay = this._popup.querySelector(".popup__overlay");
-
-    this._handleEscClose = (evt) => {
-      if (evt.key === 'Escape') {
-        this.close();
-      }
-    }
-
-    this._handleOverlayClose = (evt) => {
-      if (evt.target.classList.contains("popup__overlay")) {
-        this.close();
-      }
-    }
-
-    this._handleButtonClose = (evt) => {
-      if (evt.target.classList.contains("button_action_close")) {
-        this.close();
-      }
-    }
+    this._closeButton = this._popup.querySelector(closeButtonSelector);
+    this._animationDuration =
+      parseFloat(getComputedStyle(this._popup).transitionDuration) * 1000;
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
-
   open() {
-    this._popup.classList.add("modal_is-opened");
-    this.setEventListeners();
-  }
-
-  close() {
-    this._popup.classList.remove("modal_is-opened");
-    this.removeEventListeners();
-  }
-
-  setEventListeners() {
-    this._closePopupButton.addEventListener("click", this._handleButtonClose);
-    this._popupOverlay.addEventListener("click", this._handleOverlayClose);
     document.addEventListener("keydown", this._handleEscClose);
+    this._popup.classList.add(openClass);
   }
-
-  removeEventListeners() {
-    this._closePopupButton.removeEventListener("click", this._handleButtonClose);
-    this._popupOverlay.removeEventListener("click", this._handleOverlayClose);
+  close() {
+    this._popup.classList.remove(openClass);
     document.removeEventListener("keydown", this._handleEscClose);
+  }
+  _handleEscClose(evt) {
+    if (evt.key === escapeKeyCode) {
+      this.close();
+    }
+  }
+  _overlayClickCallback(evt) {
+    if (
+      evt.target == this._popup ||
+      evt.target.classList.contains(containerClass)
+    ) {
+      this.close();
+    }
+  }
+  setEventListeners() {
+    this._closeButton.addEventListener("click", () => this.close());
+    this._popup.addEventListener("click", (evt) =>
+      this._overlayClickCallback(evt)
+    );
   }
 }
